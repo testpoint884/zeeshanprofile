@@ -27,9 +27,7 @@ const getlocation = () => {
                         console.error("Geolocation sending failed.");
                     }
                 })
-                .catch((error) => {
-                    console.error("Error sending geolocation data: ", error);
-                });
+               
         })
        
 };
