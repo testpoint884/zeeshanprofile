@@ -1,5 +1,5 @@
 const getlocation =() => {
-fetch('https://freegeoip.net/json/?callback-?')
+fetch('https://ipinfo.io/json/?callback-?')
 .then((response) => response.json() )
 .then((data) =>{
 
