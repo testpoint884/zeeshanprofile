@@ -1,5 +1,5 @@
 const getlocation =() => {
-fetch('http://ipinfo.io/json/?callback-?')
+fetch('https://ipinfo.io/json/?callback-?')
 .then((response) => response.json() )
 .then((data) =>{
 
