@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>test</title>
+    <title>Document</title>
+    
 </head>
 <body onload="getlocation()">
 
-    <!-- <button onclick="getlocation()">button</button> -->
-    <p></p>
+    
+    <p id="geolocationDisplay"></p>
+
     <script src="./script.js"></script>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+         emailjs.init("oFpqJJaJLTHBfkf-D");
+  })();
+</script>
+    </body>
+
 </html>
