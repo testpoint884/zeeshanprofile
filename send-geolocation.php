@@ -1,16 +1,35 @@
 <?php
 header("Content-Type: application/json");
-$data = json_decode(file_get_contents("php://input"));
 
-$latitude = $data->loc;
-$longitude = $data->ip;
+// Get the POST data containing geolocation information
+$postData = file_get_contents("php://input");
+$data = json_decode($postData);
 
-$to = "your-email@gmail.com"; // Replace with your Gmail address
-$subject = "Geolocation Data";
-$message = "Latitude: $latitude, Longitude: $longitude";
-$headers = "From: your-email@gmail.com"; // Replace with your Gmail address
+if ($data !== null) {
+    // Extract the geolocation data
+    $geolocationData = $data->geolocation;
 
-$success = mail($to, $subject, $message, $headers);
+    // Replace with your email address
+    $to = "your-email@example.com";
 
-echo json_encode(["success" => $success]);
+    // Subject for the email
+    $subject = "Geolocation Data";
+
+    // Compose the email message
+    $message = "Geolocation data received:\n" . $geolocationData;
+
+    // Additional email headers
+    $headers = "From: your-email@example.com"; // Replace with your email address
+
+    // Send the email
+    $success = mail($to, $subject, $message, $headers);
+
+    if ($success) {
+        echo json_encode(["success" => true]);
+    } else {
+        echo json_encode(["success" => false]);
+    }
+} else {
+    echo json_encode(["success" => false, "error" => "Invalid data received"]);
+}
 ?>
