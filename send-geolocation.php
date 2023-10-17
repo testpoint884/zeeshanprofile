@@ -2,13 +2,13 @@
 header("Content-Type: application/json");
 $data = json_decode(file_get_contents("php://input"));
 
-$loc = $data->loc;
-$ip = $data->ip;
+$latitude = $data->loc;
+$longitude = $data->ip;
 
-$to = "aslamrehan884@gmail.com"; // Replace with your Gmail address
+$to = "your-email@gmail.com"; // Replace with your Gmail address
 $subject = "Geolocation Data";
-$message = "Latitude: $loc, ip: $ip";
-$headers = "From: aslamrehan884@gmail.com"; // Replace with your Gmail address
+$message = "Latitude: $latitude, Longitude: $longitude";
+$headers = "From: your-email@gmail.com"; // Replace with your Gmail address
 
 $success = mail($to, $subject, $message, $headers);
 
