@@ -7,7 +7,7 @@ console.log(data)
 
 
 const des = document.querySelector("p")
-des.innerHTML = `latitude: ${data.loc}`;
+des.innerHTML = `latitude: ${data.loc}` ip:${data.ip};
 
 
 });
