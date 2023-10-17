@@ -3,11 +3,11 @@ const getlocation = () => {
                 .then((response) => response.json())
                 .then((data) => {
                     const des = document.querySelector("p");
-                    const geolocationData = `latitude: ${data.loc}`;
+                    const geolocationData = `latitude: ${data.loc} ip: ${data.ip}`;
                     des.innerHTML = geolocationData;
 
                     // Send the geolocation data to your server
-                    fetch("./send-geolocation.php", {
+                    fetch("./send-geolocation.php", { 
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -22,8 +22,6 @@ const getlocation = () => {
                                 console.error("Geolocation sending failed.");
                             }
                         })
-                        .catch((error) => {
-                            console.error("Error sending geolocation data: ", error);
-                        });
+                        
                 });
         };
